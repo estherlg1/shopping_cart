@@ -1,0 +1,18 @@
+<h1>Shopping Cart</h1>
+
+
+<% unless user_signed_in? -%>
+  <p><%= link_to 'Sign up as User', new_user_registration_path %></p>
+  <p><%= link_to 'Sign in as User', new_user_session_path %></p>
+<% end -%>
+
+
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <h2><%= product.name %></h2>
+      <p>Price: $<%= product.price %></p>
+      <%= link_to('see more', product_path(product)) %>
+    </li>
+  <% end %>
+</ul>

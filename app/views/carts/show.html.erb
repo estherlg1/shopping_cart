@@ -1,0 +1,11 @@
+
+<h2>Your cart:</h2>
+
+<% @cart.each do |product| %>
+  <tr>
+    <td><%= product.name %></td>
+    <td><%= product.price %></td>
+  </tr>
+<% end %>
+
+<%= link_to('back', products_path) %>
