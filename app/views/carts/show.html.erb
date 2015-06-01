@@ -5,6 +5,7 @@
   <tr>
     <td><%= product.name %></td>
     <td><%= product.price %></td>
+    <%= button_to "Remove from cart", order_line_path, {method: :delete, params: {product_id: product.id}} %>
   </tr>
 <% end %>
 
